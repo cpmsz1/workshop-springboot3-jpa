@@ -1,9 +1,16 @@
 package com.educandoweb.course.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
 
 import com.educandoweb.course.entities.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
+
+	void saveAll(List<Order> asList);
+
+	Optional<Order> findById(Long id);
+
+	List<Order> findAll();
 
 }
